@@ -348,6 +348,31 @@ export const ExamSection: React.FC = () => {
         </div>
       </section>
 
+      {/* Autonomous Examination Authorities Desk */}
+      <section className="bg-[#FBF9F5] rounded-3xl p-6 sm:p-8 border border-[#E6E2D8] flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xs">
+        <div className="space-y-1.5">
+          <span className="text-[10px] font-mono uppercase font-bold text-[#C89B3C] tracking-wider">
+            Autonomous Examination Authority
+          </span>
+          <h3 className="font-heading text-xl font-bold text-[#0D2440]">
+            Office of the Controller of Examinations (COE)
+          </h3>
+          <p className="text-xs text-[#5C6B7A]">
+            Official custodian of autonomous evaluation, grades, transcripts, convocation clearance, and re-evaluation.
+          </p>
+          <div className="pt-2 text-xs text-[#0D2440] font-medium">
+            <strong>Controller of Examinations:</strong> Dr. K. Chandrasekhar, Professor
+          </div>
+        </div>
+
+        <div className="p-4 bg-white rounded-2xl border border-[#E6E2D8] text-xs font-mono space-y-1.5 flex-shrink-0">
+          <div className="text-[11px] text-[#5C6B7A]">COE Confidential Helpdesk</div>
+          <div className="text-[#0D2440] font-bold">Email: coe@becbgk.edu</div>
+          <div className="text-[#5C6B7A]">Alt: beccoe2007@gmail.com</div>
+          <div className="text-[#0D2440]">Direct Phone: 08354-234204</div>
+        </div>
+      </section>
+
     </div>
   );
 };

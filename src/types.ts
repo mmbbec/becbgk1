@@ -69,9 +69,22 @@ export interface DepartmentInfo {
   establishedYear: number;
   intake?: number;
   hodName: string;
+  hodDesignation?: string;
+  hodEmail?: string;
+  stream?: string;
   description: string;
   labs: string[];
   keyHighlights: string[];
+}
+
+export interface LeadershipMember {
+  role: string;
+  name: string;
+  designation: string;
+  department?: string;
+  email: string;
+  phone?: string;
+  description?: string;
 }
 
 export interface ExamResult {
@@ -108,4 +121,26 @@ export interface NotificationItem {
   category: 'Admissions' | 'Exams' | 'Circular' | 'TPO' | 'Research';
   isNew?: boolean;
   fileLink?: string;
+}
+
+export interface ProgrammeHOD {
+  id: string;
+  degree: 'B.E.' | 'M.Tech' | 'MBA' | 'MCA';
+  level: 'undergraduate' | 'postgraduate';
+  name: string;
+  departmentName: string;
+  code: string;
+  establishedYear: number;
+  intake: number;
+  stream: string;
+  hodName: string;
+  hodDesignation: string;
+  hodEmail: string;
+  hodPhone?: string;
+  description: string;
+  keyLabs: string[];
+  specializations: string[];
+  keyHighlights: string[];
+  accreditation?: string;
+  vtuResearchCenter?: boolean;
 }

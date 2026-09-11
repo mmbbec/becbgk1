@@ -91,9 +91,9 @@ export const LoginModal: React.FC<LoginModalProps> = ({
         session = {
           role: 'faculty',
           identifier: identifier.toUpperCase(),
-          name: 'Dr. Jayashree D. Mallapur',
-          department: 'Electronics & Communication Engg.',
-          email: 'jayashree.m@becbgk.edu'
+          name: 'Dr. Mahabaleshwar S. K.',
+          department: 'Electronics & Communication Engg. (HOD & Dean R&D)',
+          email: 'ece_hod@becbgk.edu'
         };
       } else if (activeRole === 'admin') {
         session = {
@@ -121,38 +121,38 @@ export const LoginModal: React.FC<LoginModalProps> = ({
   return (
     <div 
       id="login-modal-backdrop"
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-[#0A1628]/60 backdrop-blur-sm animate-in fade-in duration-200"
+      className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-[#0A1628]/60 backdrop-blur-sm animate-in fade-in duration-200 overflow-y-auto"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
     >
       <div 
         id="login-modal-panel"
-        className="w-full max-w-md bg-white rounded-3xl shadow-[0_12px_32px_-8px_rgba(10,22,40,.25)] border border-[#E6E2D8] overflow-hidden"
+        className="w-full max-w-md bg-white rounded-2xl sm:rounded-3xl shadow-[0_12px_32px_-8px_rgba(10,22,40,.25)] border border-[#E6E2D8] overflow-hidden my-auto max-h-[92vh] flex flex-col"
       >
         {/* Header Bar */}
-        <div className="bg-[#0D2440] px-6 py-5 text-white relative">
+        <div className="bg-[#0D2440] px-5 sm:px-6 py-4 sm:py-5 text-white relative flex-shrink-0">
           <button 
             id="login-modal-close-btn"
             onClick={onClose}
-            className="absolute top-5 right-5 p-1.5 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"
+            className="absolute top-4 sm:top-5 right-4 sm:right-5 p-1.5 text-white/70 hover:text-white hover:bg-white/10 rounded-full transition-colors"
           >
             <X className="w-5 h-5" />
           </button>
           
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-[#C89B3C] text-[#0D2440] font-serif font-bold text-lg flex items-center justify-center">
+            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#C89B3C] text-[#0D2440] font-serif font-bold text-base sm:text-lg flex items-center justify-center flex-shrink-0">
               BEC
             </div>
-            <div>
-              <h2 className="font-heading text-lg font-bold leading-tight">Basaveshwar Engineering College</h2>
-              <p className="text-xs text-[#C89B3C] font-mono">Bagalkote · Unified Single Sign-On</p>
+            <div className="min-w-0 pr-6">
+              <h2 className="font-heading text-base sm:text-lg font-bold leading-tight truncate">Basaveshwar Engg. College</h2>
+              <p className="text-[11px] sm:text-xs text-[#C89B3C] font-mono truncate">Bagalkote · Unified Single Sign-On</p>
             </div>
           </div>
         </div>
 
         {/* Role Switcher Tabs */}
-        <div className="grid grid-cols-4 bg-[#FBF9F5] border-b border-[#E6E2D8] p-1.5 gap-1 text-xs">
+        <div className="grid grid-cols-4 bg-[#FBF9F5] border-b border-[#E6E2D8] p-1 sm:p-1.5 gap-1 text-[11px] sm:text-xs flex-shrink-0">
           <button
             id="role-tab-student"
             type="button"
@@ -163,8 +163,8 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                 : 'text-[#5C6B7A] hover:text-[#0D2440]'
             }`}
           >
-            <GraduationCap className="w-4 h-4 text-[#0D2440]" />
-            <span>Student</span>
+            <GraduationCap className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#0D2440]" />
+            <span className="truncate">Student</span>
           </button>
 
           <button
@@ -177,8 +177,8 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                 : 'text-[#5C6B7A] hover:text-[#0D2440]'
             }`}
           >
-            <UserCheck className="w-4 h-4 text-[#C89B3C]" />
-            <span>Faculty</span>
+            <UserCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#C89B3C]" />
+            <span className="truncate">Faculty</span>
           </button>
 
           <button
@@ -191,8 +191,8 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                 : 'text-[#5C6B7A] hover:text-[#0D2440]'
             }`}
           >
-            <ShieldCheck className="w-4 h-4 text-[#2E7D5B]" />
-            <span>Admin</span>
+            <ShieldCheck className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#2E7D5B]" />
+            <span className="truncate">Admin</span>
           </button>
 
           <button
@@ -205,13 +205,13 @@ export const LoginModal: React.FC<LoginModalProps> = ({
                 : 'text-[#5C6B7A] hover:text-[#0D2440]'
             }`}
           >
-            <Mail className="w-4 h-4 text-[#5C6B7A]" />
-            <span>Webmail</span>
+            <Mail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-[#5C6B7A]" />
+            <span className="truncate">Webmail</span>
           </button>
         </div>
 
         {/* Content & Form */}
-        <div className="p-6">
+        <div className="p-5 sm:p-6 overflow-y-auto flex-1">
           <div className="mb-4">
             <h3 className="font-heading text-xl font-bold text-[#0D2440]">
               {activeRole === 'student' && 'Student Portal Login'}

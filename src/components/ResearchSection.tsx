@@ -168,6 +168,18 @@ export const ResearchSection: React.FC = () => {
             </div>
           ))}
         </div>
+
+        {/* Dean R&D Note */}
+        <div className="mt-6 pt-4 border-t border-[#E6E2D8] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs">
+          <div>
+            <span className="font-mono text-[11px] text-[#5C6B7A] uppercase font-bold block">Dean, Research & Development and ICT:</span>
+            <span className="font-heading font-bold text-[#0D2440] text-sm">Dr. Mahabaleshwar S. K.</span>
+            <span className="text-[#5C6B7A] text-xs block">Professor & Head, Electronics & Communication Engg.</span>
+          </div>
+          <div className="font-mono text-xs text-[#0D2440]">
+            Official Query: <a href="mailto:ece_hod@becbgk.edu" className="font-bold underline text-[#C89B3C]">ece_hod@becbgk.edu</a>
+          </div>
+        </div>
       </section>
 
     </div>

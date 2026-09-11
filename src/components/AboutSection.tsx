@@ -13,6 +13,8 @@ import {
   Sparkles
 } from 'lucide-react';
 import { NavTab } from '../types';
+import { INSTITUTIONAL_LEADERSHIP } from '../data/collegeData';
+import { Mail, Phone } from 'lucide-react';
 
 interface AboutSectionProps {
   onNavigate: (tab: NavTab) => void;
@@ -140,6 +142,70 @@ export const AboutSection: React.FC<AboutSectionProps> = ({ onNavigate }) => {
               <p className="text-xs text-[#5C6B7A] leading-relaxed">
                 {m.desc}
               </p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Institutional Leadership & Administrative Deans */}
+      <section id="leadership-section" className="space-y-6 pt-4 border-t border-[#E6E2D8]">
+        <div>
+          <span className="text-xs font-mono uppercase font-bold text-[#C89B3C] tracking-wider">
+            Governance & Academic Administration
+          </span>
+          <h2 className="font-heading text-2xl sm:text-3xl font-bold text-[#0D2440] mt-1">
+            Institutional Leadership & Deans
+          </h2>
+          <p className="text-xs sm:text-sm text-[#5C6B7A]">
+            Official leadership governing academic autonomy, research expansion, and student services at Basaveshwar Engineering College Bagalkote.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {INSTITUTIONAL_LEADERSHIP.map((leader, idx) => (
+            <div 
+              key={idx} 
+              className="bg-white rounded-2xl border border-[#E6E2D8] p-6 shadow-xs hover:shadow-md transition-all flex flex-col justify-between"
+            >
+              <div className="space-y-3">
+                <div className="flex items-center justify-between gap-2">
+                  <span className="text-[10px] font-mono uppercase font-bold px-2.5 py-1 rounded-full bg-[#0D2440]/10 text-[#0D2440]">
+                    {leader.role}
+                  </span>
+                  <ShieldCheck className="w-4 h-4 text-[#2E7D5B]" />
+                </div>
+                <div>
+                  <h3 className="font-heading font-bold text-lg text-[#0D2440]">
+                    {leader.name}
+                  </h3>
+                  <p className="text-xs font-semibold text-[#C89B3C]">
+                    {leader.designation}
+                  </p>
+                  <p className="text-[11px] text-[#5C6B7A] font-medium mt-0.5">
+                    {leader.department}
+                  </p>
+                </div>
+                {leader.description && (
+                  <p className="text-xs text-[#5C6B7A] leading-relaxed pt-2 border-t border-[#E6E2D8]/60">
+                    {leader.description}
+                  </p>
+                )}
+              </div>
+
+              <div className="mt-5 pt-3 border-t border-[#E6E2D8] space-y-1.5 text-xs font-mono text-[#5C6B7A]">
+                <div className="flex items-center gap-2">
+                  <Mail className="w-3.5 h-3.5 text-[#0D2440]" />
+                  <a href={`mailto:${leader.email}`} className="hover:text-[#0D2440] hover:underline truncate">
+                    {leader.email}
+                  </a>
+                </div>
+                {leader.phone && (
+                  <div className="flex items-center gap-2">
+                    <Phone className="w-3.5 h-3.5 text-[#0D2440]" />
+                    <span>{leader.phone}</span>
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>

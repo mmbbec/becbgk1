@@ -162,30 +162,30 @@ export const Header: React.FC<HeaderProps> = ({
         <div 
           id="header-logo-block"
           onClick={() => { onSelectTab('home'); setMobileMenuOpen(false); }}
-          className="flex items-center gap-3.5 cursor-pointer select-none group flex-shrink-0"
+          className="flex items-center gap-2.5 sm:gap-3 cursor-pointer select-none group flex-shrink-0"
         >
           {/* Navy rounded square with gold text */}
-          <div className="w-12 h-12 rounded-xl bg-[#0D2440] text-[#C89B3C] flex items-center justify-center font-serif font-black text-xl tracking-wider shadow-md group-hover:scale-[1.03] transition-transform border border-[#C89B3C]/30 flex-shrink-0">
+          <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-[#0D2440] text-[#C89B3C] flex items-center justify-center font-serif font-black text-lg sm:text-xl tracking-wider shadow-md group-hover:scale-[1.03] transition-transform border border-[#C89B3C]/30 flex-shrink-0">
             BEC
           </div>
-          <div className="flex flex-col text-left">
-            <span className="text-[11px] font-semibold uppercase tracking-wider text-[#5C6B7A] leading-tight">
+          <div className="flex flex-col text-left min-w-0">
+            <span className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-wider text-[#5C6B7A] leading-tight truncate">
               B.V.V. Sangha's
             </span>
-            <span className="font-heading font-bold text-base sm:text-lg text-[#0D2440] leading-tight group-hover:text-[#C89B3C] transition-colors">
+            <span className="font-heading font-bold text-sm sm:text-base 2xl:text-lg text-[#0D2440] leading-tight group-hover:text-[#C89B3C] transition-colors whitespace-nowrap">
               Basaveshwar Engineering College
             </span>
-            <span className="text-[11px] font-mono font-medium text-[#C89B3C] tracking-wide leading-tight">
+            <span className="text-[10px] sm:text-[11px] font-mono font-medium text-[#C89B3C] tracking-wide leading-tight whitespace-nowrap">
               Bagalkote · ESTD 1963 · Autonomous
             </span>
           </div>
         </div>
 
-        {/* Center: Primary Navigation Tabs (Desktop >= 1280px or 1080px condensed) */}
+        {/* Center: Primary Navigation Tabs */}
         <nav 
           id="primary-nav-tabs"
           ref={navRef}
-          className="hidden xl:flex items-center gap-1.5"
+          className="hidden xl:flex items-center gap-0.5 2xl:gap-1.5 min-w-0"
         >
           {navItems.map((item) => {
             const isActive = currentTab === item.id;
@@ -205,7 +205,7 @@ export const Header: React.FC<HeaderProps> = ({
                     onSelectTab(item.id);
                     setActiveDropdown(null);
                   }}
-                  className={`flex items-center gap-1 px-3 py-2 text-sm font-medium rounded-lg transition-all duration-150 whitespace-nowrap ${
+                  className={`flex items-center gap-1 px-2.5 2xl:px-3 py-1.5 2xl:py-2 text-xs 2xl:text-sm font-medium rounded-lg transition-all duration-150 whitespace-nowrap ${
                     isActive
                       ? 'text-[#0D2440] bg-[#0D2440]/10 font-semibold'
                       : 'text-[#5C6B7A] hover:text-[#0D2440] hover:bg-[#0D2440]/5'
@@ -213,7 +213,7 @@ export const Header: React.FC<HeaderProps> = ({
                 >
                   <span>{item.label}</span>
                   {hasDropdown && (
-                    <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 opacity-70 ${isDropdownActive ? 'rotate-180 text-[#C89B3C]' : ''}`} />
+                    <ChevronDown className={`w-3 h-3 2xl:w-3.5 2xl:h-3.5 transition-transform duration-200 opacity-70 ${isDropdownActive ? 'rotate-180 text-[#C89B3C]' : ''}`} />
                   )}
                 </button>
 
@@ -248,7 +248,7 @@ export const Header: React.FC<HeaderProps> = ({
         </nav>
 
         {/* Right End: Login Area & Mobile Toggle */}
-        <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0 ml-auto xl:ml-0 relative z-30">
           
           {userSession ? (
             /* Logged in state button */
@@ -272,22 +272,22 @@ export const Header: React.FC<HeaderProps> = ({
               </button>
             </div>
           ) : (
-            /* Login Dropdown trigger button - Section 2 & 13 */
+            /* Login Dropdown trigger button */
             <div className="relative" ref={loginRef}>
               <button
                 id="header-login-btn"
                 onClick={() => setLoginDropdownOpen(!loginDropdownOpen)}
-                className="flex items-center gap-2 rounded-full px-5 py-2 text-xs sm:text-sm font-semibold border-[1.5px] border-[#0D2440] text-[#0D2440] hover:bg-[#0D2440] hover:text-white transition-all duration-200 shadow-sm"
+                className="flex items-center gap-1.5 sm:gap-2 rounded-full px-4 sm:px-5 py-1.5 sm:py-2 text-xs sm:text-sm font-semibold border-[1.5px] border-[#0D2440] text-[#0D2440] hover:bg-[#0D2440] hover:text-white transition-all duration-200 shadow-sm whitespace-nowrap"
               >
                 <span>Login</span>
                 <ChevronDown className={`w-3.5 h-3.5 transition-transform duration-200 ${loginDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
 
-              {/* Login Dropdown (Section 13.2) */}
+              {/* Login Dropdown */}
               {loginDropdownOpen && (
                 <div 
                   id="header-login-dropdown"
-                  className="absolute right-0 top-full mt-2 w-60 bg-white rounded-2xl shadow-[0_12px_32px_-8px_rgba(10,22,40,0.18)] border border-[#E6E2D8] py-2 z-50 animate-in fade-in zoom-in-95 duration-150"
+                  className="absolute right-0 top-full mt-2 w-60 max-w-[calc(100vw-24px)] bg-white rounded-2xl shadow-[0_12px_32px_-8px_rgba(10,22,40,0.18)] border border-[#E6E2D8] py-2 z-50 animate-in fade-in zoom-in-95 duration-150"
                 >
                   <div className="px-3.5 py-1.5 text-[11px] font-mono uppercase tracking-wider text-[#5C6B7A] border-b border-[#E6E2D8]/60 mb-1 flex items-center justify-between">
                     <span>Account Portals</span>
@@ -425,6 +425,67 @@ export const Header: React.FC<HeaderProps> = ({
                 </div>
               );
             })}
+          </div>
+
+          {/* Quick Portal Logins inside drawer */}
+          <div className="mt-4 pt-3 border-t border-[#E6E2D8] space-y-2">
+            <div className="flex items-center justify-between px-1">
+              <span className="text-[11px] font-mono uppercase text-[#0D2440] font-bold tracking-wider flex items-center gap-1.5">
+                <Sparkles className="w-3 h-3 text-[#C89B3C]" />
+                Account Portals
+              </span>
+              <span className="text-[10px] text-[#5C6B7A]">Direct Login</span>
+            </div>
+            <div className="grid grid-cols-2 gap-2">
+              <button
+                onClick={() => {
+                  onOpenLogin('student');
+                  setMobileMenuOpen(false);
+                }}
+                className="flex items-center gap-2 p-2.5 bg-white border border-[#E6E2D8] rounded-xl text-xs font-semibold text-[#0D2440] hover:bg-[#FBF9F5] shadow-xs"
+              >
+                <div className="w-6 h-6 rounded-md bg-[#0D2440]/10 text-[#0D2440] flex items-center justify-center">
+                  <GraduationCap className="w-3.5 h-3.5" />
+                </div>
+                <span>Student</span>
+              </button>
+              <button
+                onClick={() => {
+                  onOpenLogin('faculty');
+                  setMobileMenuOpen(false);
+                }}
+                className="flex items-center gap-2 p-2.5 bg-white border border-[#E6E2D8] rounded-xl text-xs font-semibold text-[#0D2440] hover:bg-[#FBF9F5] shadow-xs"
+              >
+                <div className="w-6 h-6 rounded-md bg-[#C89B3C]/15 text-[#0D2440] flex items-center justify-center">
+                  <UserCheck className="w-3.5 h-3.5" />
+                </div>
+                <span>Faculty</span>
+              </button>
+              <button
+                onClick={() => {
+                  onOpenLogin('admin');
+                  setMobileMenuOpen(false);
+                }}
+                className="flex items-center gap-2 p-2.5 bg-white border border-[#E6E2D8] rounded-xl text-xs font-semibold text-[#0D2440] hover:bg-[#FBF9F5] shadow-xs"
+              >
+                <div className="w-6 h-6 rounded-md bg-[#2E7D5B]/15 text-[#2E7D5B] flex items-center justify-center">
+                  <ShieldCheck className="w-3.5 h-3.5" />
+                </div>
+                <span>Admin</span>
+              </button>
+              <button
+                onClick={() => {
+                  onOpenLogin('webmail');
+                  setMobileMenuOpen(false);
+                }}
+                className="flex items-center gap-2 p-2.5 bg-white border border-[#E6E2D8] rounded-xl text-xs font-semibold text-[#0D2440] hover:bg-[#FBF9F5] shadow-xs"
+              >
+                <div className="w-6 h-6 rounded-md bg-[#5C6B7A]/15 text-[#5C6B7A] flex items-center justify-center">
+                  <Mail className="w-3.5 h-3.5" />
+                </div>
+                <span>Webmail</span>
+              </button>
+            </div>
           </div>
 
           {/* Quick links inside drawer */}

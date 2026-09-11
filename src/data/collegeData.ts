@@ -1,4 +1,4 @@
-import { CourseIntake, PlacementSlot, DepartmentInfo, ExamResult, GalleryItem, NotificationItem } from '../types';
+import { CourseIntake, PlacementSlot, DepartmentInfo, ExamResult, GalleryItem, NotificationItem, LeadershipMember } from '../types';
 
 export const COLLEGE_CODES = [
   { programme: 'CET (Aided)', code: 'E031', description: 'KEA Karnataka CET Govt. Quota - Aided' },
@@ -80,6 +80,72 @@ export const PLACEMENT_SLOTS: PlacementSlot[] = [
   }
 ];
 
+export const INSTITUTIONAL_LEADERSHIP: LeadershipMember[] = [
+  {
+    role: 'Principal',
+    name: 'Dr. B. R. Hiremath',
+    designation: 'Principal & Professor',
+    department: 'Executive Administration',
+    email: 'principal@becbgk.edu',
+    phone: '+91 76187 81963',
+    description: 'Guiding institutional academic autonomy, research excellence, NAAC A Grade accreditation, and strategic development under Shri B.V.V. Sangha.'
+  },
+  {
+    role: 'Dean, Academic Affairs',
+    name: 'Dr. P. N. Kulkarni',
+    designation: 'Dean Academic & Professor',
+    department: 'Academic Section & PG Studies',
+    email: 'deanac@becbgk.edu',
+    phone: '08354-234060',
+    description: 'Overseeing curriculum framing, NEP 2020 schemes, Board of Studies (BoS), Academic Council, and autonomous regulations.'
+  },
+  {
+    role: 'Controller of Examinations (COE)',
+    name: 'Dr. K. Chandrasekhar',
+    designation: 'Controller of Examinations & Professor',
+    department: 'Autonomous Examination Section',
+    email: 'coe@becbgk.edu',
+    phone: '08354-234204',
+    description: 'Supervising autonomous continuous internal evaluation (CIE), semester-end examinations (SEE), evaluation confidential wing, and grade cards.'
+  },
+  {
+    role: 'Dean, Career Guidance & Placement',
+    name: 'Dr. S. G. Kambalimath',
+    designation: 'Dean & Head, Training and Placement (TPO)',
+    department: 'Training and Placement Cell',
+    email: 'placement@becbgk.edu',
+    phone: '08354-234060',
+    description: 'Directing campus recruitment drives, industry-institute partnerships, student skill training, and corporate MOUs.'
+  },
+  {
+    role: 'Dean, Research & Development and ICT',
+    name: 'Dr. Mahabaleshwar S. K.',
+    designation: 'Dean R&D / ICT & Professor',
+    department: 'Electronics & Communication Engg. / R&D Cell',
+    email: 'ece_hod@becbgk.edu',
+    phone: '08354-234060',
+    description: 'Leading funded research grants (TEQIP, AICTE, DST), VTU recognized R&D centres, campus ICT infrastructure, and intellectual property.'
+  },
+  {
+    role: 'Programme Officer, NSS',
+    name: 'Dr. S. K. Patil',
+    designation: 'Associate Professor & HOD Chemistry',
+    department: 'Department of Chemistry & NSS Unit',
+    email: 'chemistry_hod@becbgk.edu',
+    phone: '08354-234060',
+    description: 'Directing community outreach, national integration camps, blood donation drives, and environmental service initiatives.'
+  },
+  {
+    role: 'Development Officer',
+    name: 'Prof. B. S. Haravi',
+    designation: 'Development Officer & Assistant Professor',
+    department: 'Institutional Development & Admissions',
+    email: 'admissions@becbgk.edu',
+    phone: '+91 99026 84833',
+    description: 'Coordinating KEA Karnataka CET, COMED-K, and institutional admissions counselling and public relations.'
+  }
+];
+
 export const DEPARTMENTS: DepartmentInfo[] = [
   {
     id: 'aiml',
@@ -87,8 +153,11 @@ export const DEPARTMENTS: DepartmentInfo[] = [
     category: 'ug',
     establishedYear: 2021,
     intake: 60,
-    hodName: 'Dr. Shilpa R. Patil',
-    description: 'Pioneering intelligent autonomous systems, computer vision, natural language processing, and deep learning algorithms with high-performance GPU laboratories.',
+    hodName: 'Dr. Bharati M. Reshmi',
+    hodDesignation: 'Associate Professor & Head',
+    hodEmail: 'aiml_hod@becbgk.edu',
+    stream: 'Un-Aided',
+    description: 'Pioneering intelligent autonomous systems, computer vision, natural language processing, deep learning algorithms, and high-performance computing with modern GPU facilities.',
     labs: ['Deep Learning & Computer Vision Lab', 'Cloud Computing & Big Data Lab', 'NVIDIA GPU Cluster Facility'],
     keyHighlights: ['AICTE IDEA Lab Integration', 'Industry MOUs with AWS & Intel', 'Hackathon winning student teams']
   },
@@ -99,9 +168,12 @@ export const DEPARTMENTS: DepartmentInfo[] = [
     establishedYear: 1983,
     intake: 180,
     hodName: 'Dr. S. V. Saboji',
-    description: 'NBA accredited centre of computing excellence offering rigorous training in algorithm design, software architecture, distributed systems, and cybersecurity.',
+    hodDesignation: 'Professor & Head',
+    hodEmail: 'hod_cse@becbgk.edu',
+    stream: 'Aided (30) & Un-Aided (150)',
+    description: 'NBA accredited premier computing department delivering world-class curriculum in algorithm design, distributed computing, cloud architectures, and full-stack software development.',
     labs: ['High Performance Computing Lab', 'Network Systems Lab', 'Full Stack Development Lab'],
-    keyHighlights: ['NBA accredited till 2025', 'Active ACM and CSI student chapters', 'Highest number of campus placements']
+    keyHighlights: ['NBA accredited department', 'Active ACM and CSI student chapters', 'Highest placement track record in tier-1 IT firms']
   },
   {
     id: 'ise',
@@ -109,8 +181,11 @@ export const DEPARTMENTS: DepartmentInfo[] = [
     category: 'ug',
     establishedYear: 2000,
     intake: 180,
-    hodName: 'Dr. Ramesh K. B.',
-    description: 'Focusing on enterprise information architecture, cloud services, software testing, database engineering, and modern DevOps pipelines.',
+    hodName: 'Dr. Lokesh B. B.',
+    hodDesignation: 'Associate Professor & Head',
+    hodEmail: 'ise_hod@becbgk.edu',
+    stream: 'Un-Aided',
+    description: 'Excellence in enterprise information systems, cybersecurity, data warehousing, cloud DevOps, software quality engineering, and mobile computing.',
     labs: ['Database Systems Lab', 'Software Testing & Automation Lab', 'Mobile App Development Center'],
     keyHighlights: ['Exceptional placement records', 'Collaborative hackathons with MNCs', 'Modern IoT & Web3 experimentation wing']
   },
@@ -120,10 +195,13 @@ export const DEPARTMENTS: DepartmentInfo[] = [
     category: 'ug',
     establishedYear: 1967,
     intake: 120,
-    hodName: 'Dr. Jayashree D. Mallapur',
-    description: 'Renowned department with cutting-edge laboratories in VLSI design, embedded systems, 5G wireless communications, and signal processing.',
+    hodName: 'Dr. Mahabaleshwar S. K.',
+    hodDesignation: 'Professor & Head (Dean R&D / ICT)',
+    hodEmail: 'ece_hod@becbgk.edu',
+    stream: 'Aided (60) & Un-Aided (60)',
+    description: 'Recognized center of excellence in VLSI design, semiconductor devices, 5G wireless networks, embedded microcontrollers, and digital signal processing.',
     labs: ['Cadence VLSI Design Lab', 'Advanced Wireless & RF Lab', 'DSP & Microcontroller Workstation'],
-    keyHighlights: ['Cadence & Synopsys EDA tools', 'Major funded research projects from ISRO & DST', 'Active IEEE Photonics and ComSoc branch']
+    keyHighlights: ['Cadence & Synopsys EDA tools', 'Major funded research projects from ISRO & DST', 'Active IEEE Student Branch']
   },
   {
     id: 'eee',
@@ -131,8 +209,11 @@ export const DEPARTMENTS: DepartmentInfo[] = [
     category: 'ug',
     establishedYear: 1963,
     intake: 60,
-    hodName: 'Dr. Suresh H. Jangamshetti',
-    description: 'One of the founding branches of the college in 1963, recognized for pioneer work in wind and solar microgrids, power electronics, and electric mobility.',
+    hodName: 'Dr. Raghuram L. Naik',
+    hodDesignation: 'Associate Professor & Head',
+    hodEmail: 'eee_hod@becbgk.edu',
+    stream: 'Aided (30) & Un-Aided (30)',
+    description: 'Founding branch of the college established in 1963, recognized across Karnataka for pioneer work in wind and solar microgrids, power electronics, electric vehicle drives, and smart grid automation.',
     labs: ['Smart Grid & Renewable Energy Lab', 'Power Electronics & Drives Lab', 'High Voltage Engineering Facility'],
     keyHighlights: ['Wind Energy Resource Mapping pioneer', 'Recognized VTU R&D Centre', 'Solar rooftop microgrid installed on campus']
   },
@@ -142,8 +223,11 @@ export const DEPARTMENTS: DepartmentInfo[] = [
     category: 'ug',
     establishedYear: 1963,
     intake: 120,
-    hodName: 'Dr. S. N. Kurbet',
-    description: 'Founding department equipped with advanced CAD/CAM/CAE centres, additive manufacturing 3D printers, internal combustion engine testing rigs, and wind tunnels.',
+    hodName: 'Dr. S. S. Balli',
+    hodDesignation: 'Professor & Head',
+    hodEmail: 'me_hod@becbgk.edu',
+    stream: 'Aided (90) & Un-Aided (30)',
+    description: 'Equipped with sophisticated CAD/CAM/CAE centres, CNC machining, additive manufacturing 3D printers, internal combustion engine testing rigs, and wind tunnel testing.',
     labs: ['AICTE IDEA 3D Prototyping Lab', 'Heat Transfer & Thermodynamics Lab', 'Mechatronics & Robotics Lab'],
     keyHighlights: ['Host of prestigious BAJA SAE team', 'Significant research publications in composite materials', 'Consultancy services for regional industries']
   },
@@ -153,8 +237,11 @@ export const DEPARTMENTS: DepartmentInfo[] = [
     category: 'ug',
     establishedYear: 1963,
     intake: 120,
-    hodName: 'Dr. B. M. Gangadhariah',
-    description: 'Established with the college in 1963, serving North Karnataka with state-of-the-art testing in structural dynamics, soil mechanics, environmental engineering, and GIS mapping.',
+    hodName: 'Dr. S. H. Sanni',
+    hodDesignation: 'Professor & Head, BoS Chairman',
+    hodEmail: 'cv_hod@becbgk.edu',
+    stream: 'Aided (60) & Un-Aided (60)',
+    description: 'Established with the college foundation in 1963, leading North Karnataka with state-of-the-art testing in structural dynamics, geotechnical engineering, environmental engineering, and GIS mapping.',
     labs: ['Total Station & Geoinformatics Lab', 'Advanced Concrete Testing Lab', 'Soil Mechanics & Geotechnical Lab'],
     keyHighlights: ['Primary consultancy center for irrigation & public works', 'NABL accredited testing capabilities', 'Recognized VTU Research Centre']
   },
@@ -165,7 +252,10 @@ export const DEPARTMENTS: DepartmentInfo[] = [
     establishedYear: 2002,
     intake: 30,
     hodName: 'Dr. Bharati S. Meti',
-    description: 'Interdisciplinary branch driving innovation in bioprocess engineering, bioinformatics, agricultural biotechnology, and microbial genomics.',
+    hodDesignation: 'Professor & Head',
+    hodEmail: 'bt_hod@becbgk.edu',
+    stream: 'Un-Aided',
+    description: 'Interdisciplinary department driving research in bioprocess engineering, bioinformatics, agricultural biotechnology, and microbial genomics.',
     labs: ['Bioreactor & Fermentation Lab', 'Plant Tissue Culture Lab', 'Molecular Biology & Genetics Lab'],
     keyHighlights: ['Biofuel Research & Information Centre (BRIC)', 'Patents on bio-pesticides and natural extracts', 'DST funded research projects']
   },
@@ -175,8 +265,11 @@ export const DEPARTMENTS: DepartmentInfo[] = [
     category: 'ug',
     establishedYear: 2022,
     intake: 60,
-    hodName: 'Dr. Mallikarjun S. K.',
-    description: 'Harmonious fusion of hardware and software engineering addressing the needs of Edge AI, embedded computing, IoT devices, and cyber-physical systems.',
+    hodName: 'Dr. Mahabaleshwar S. K.',
+    hodDesignation: 'Professor & Program Head',
+    hodEmail: 'et_hod@becbgk.edu',
+    stream: 'Un-Aided',
+    description: 'Convergence of electronic hardware design and advanced software engineering, preparing engineers for Edge AI, IoT sensors, firmware programming, and cyber-physical systems.',
     labs: ['Embedded Systems & Edge Computing Lab', 'IoT Sensor Network Lab', 'Digital Signal Processing Suite'],
     keyHighlights: ['Industry-aligned curriculum', 'Fast-growing branch with tech recruiters', 'Hands-on hardware accelerator modules']
   },
@@ -186,8 +279,11 @@ export const DEPARTMENTS: DepartmentInfo[] = [
     category: 'ug',
     establishedYear: 1984,
     intake: 30,
-    hodName: 'Dr. G. V. Patil',
-    description: 'Focusing on supply chain optimization, Lean Six Sigma, robotics, operational research, ergonomics, and Industry 4.0 factory automation.',
+    hodName: 'Dr. C. M. Javalagi',
+    hodDesignation: 'Associate Professor & Head',
+    hodEmail: 'ipe_hod@becbgk.edu',
+    stream: 'Aided',
+    description: 'Focusing on supply chain optimization, Lean Six Sigma, industrial robotics, operational research, ergonomics, and Industry 4.0 automated manufacturing.',
     labs: ['Flexible Manufacturing Systems (FMS) Lab', 'Quality Engineering & Metrology Lab', 'Ergonomics & Work Design Facility'],
     keyHighlights: ['Strong ties with manufacturing belts', 'Industry 4.0 demonstration setups', 'Pioneering work in operations research']
   },
@@ -198,39 +294,102 @@ export const DEPARTMENTS: DepartmentInfo[] = [
     establishedYear: 1980,
     intake: 30,
     hodName: 'Dr. C. M. Veerendrakumar',
-    description: 'Dedicated to automotive powertrain testing, electric vehicle vehicle architecture, vehicle safety dynamics, and emissions engineering.',
+    hodDesignation: 'Professor & Head',
+    hodEmail: 'au_hod@becbgk.edu',
+    stream: 'Un-Aided (Re-established 2024-25)',
+    description: 'Re-established in academic year 2024–25 with modern laboratories for automotive powertrain testing, electric vehicle architecture, vehicle chassis diagnostics, and emission compliance.',
     labs: ['Automotive Chassis & Transmission Lab', 'EV Battery & Powertrain Testbed', 'Engine Diagnostics & Emission Analysis Lab'],
-    keyHighlights: ['Formula Student racing prototype vehicle', 'Electric buggy design for campus commute', 'Testing facilities for local transport corporations']
+    keyHighlights: ['Formula Student racing prototype vehicle', 'Electric buggy design for campus commute', 'Testing facilities for regional transport corporations']
   },
   {
-    id: 'sh',
-    name: 'Science & Humanities',
+    id: 'math',
+    name: 'Department of Mathematics',
     category: 'science-humanities',
     establishedYear: 1963,
-    hodName: 'Dr. V. S. Puranik',
-    description: 'Foundational academic departments including Physics, Chemistry, Mathematics, and Humanities fostering scientific temper and professional communication.',
-    labs: ['Advanced Engineering Physics Optics Lab', 'Instrumental Chemical Analysis Lab', 'Language & Professional Communication Lab'],
-    keyHighlights: ['High index research citations', 'Special bridge courses for incoming freshers', 'Interdisciplinary research support']
+    hodName: 'Dr. S. V. Gurushantanavar',
+    hodDesignation: 'Associate Professor & Head',
+    hodEmail: 'math_hod@becbgk.edu',
+    description: 'Delivering rigorous mathematical foundations for all engineering branches in numerical analysis, transform techniques, differential calculus, graph theory, and cryptography.',
+    labs: ['Computational Mathematics & MATLAB Lab', 'Advanced Statistical Computing Lab'],
+    keyHighlights: ['Recognized VTU R&D Centre in Applied Mathematics', 'High-impact international journal citations', 'Special foundation modules for first-year students']
+  },
+  {
+    id: 'phy',
+    name: 'Department of Physics',
+    category: 'science-humanities',
+    establishedYear: 1963,
+    hodName: 'Prof. Ratnaprabha P. Araganji',
+    hodDesignation: 'Associate Professor & Head',
+    hodEmail: 'physics_hod@becbgk.edu',
+    description: 'Engaging engineering students in engineering physics, laser optics, quantum mechanics, crystallography, thin film materials, and semiconductor device physics.',
+    labs: ['Engineering Physics Optics Lab', 'Thin Films & Material Characterization Lab'],
+    keyHighlights: ['Recognized VTU R&D Centre in Materials Science', 'Advanced optical measurement instruments', 'Active publications in crystal growth and thin films']
+  },
+  {
+    id: 'chem',
+    name: 'Department of Chemistry',
+    category: 'science-humanities',
+    establishedYear: 1963,
+    hodName: 'Dr. S. K. Patil',
+    hodDesignation: 'Associate Professor & Head (NSS Programme Officer)',
+    hodEmail: 'chemistry_hod@becbgk.edu',
+    description: 'Dedicated to applied chemistry, electrochemical energy storage, water purification engineering, corrosion inhibition, polymer chemistry, and environmental testing.',
+    labs: ['Instrumental Chemical Analysis Lab', 'Electrochemical & Corrosion Testing Lab'],
+    keyHighlights: ['Recognized VTU R&D Centre in Chemistry', 'Consultancy on regional soil and water quality analysis', 'Active NSS community welfare leadership']
+  },
+  {
+    id: 'hss',
+    name: 'Humanities & Social Sciences (HSS)',
+    category: 'science-humanities',
+    establishedYear: 1963,
+    hodName: 'Prof. B. G. Hokarani',
+    hodDesignation: 'Assistant Professor & Head',
+    hodEmail: 'hss_hod@becbgk.edu',
+    description: 'Fostering communication competency, professional ethics, corporate etiquette, constitutional awareness, and Kannada Kali / Manasu language courses.',
+    labs: ['Digital Language & Phonetics Lab', 'Professional Communication & Soft Skills Studio'],
+    keyHighlights: ['Equipped with multimedia language learning software', 'Personality development and GD interview workshops', 'Structured Kannada instruction for non-native students']
+  },
+  {
+    id: 'mba',
+    name: 'Department of Management Studies (MBA)',
+    category: 'pg',
+    establishedYear: 2006,
+    intake: 60,
+    hodName: 'Dr. Vinod S. Puranik',
+    hodDesignation: 'Professor & Head',
+    hodEmail: 'mba_hod@becbgk.edu',
+    stream: 'KEA PGCET / KMAT Code B124',
+    description: 'Autonomous master of business administration fostering business leadership, entrepreneurship, strategic marketing, financial engineering, and human resource management.',
+    labs: ['Business Analytics & FinTech Lab', 'Corporate Case Study Simulation Room'],
+    keyHighlights: ['Active industry-institute interface', 'Executive CXO guest lecture series', 'Dedicated placement and entrepreneurship incubation']
+  },
+  {
+    id: 'mca',
+    name: 'Department of Computer Applications (MCA)',
+    category: 'pg',
+    establishedYear: 2008,
+    intake: 60,
+    hodName: 'Prof. Sangamesh M. Magi',
+    hodDesignation: 'Associate Professor & Head',
+    hodEmail: 'mca_hod@becbgk.edu',
+    stream: 'KEA PGCET / KMAT Code C408',
+    description: 'Autonomous master of computer applications imparting cutting-edge software engineering, database administration, cloud architecture, and full-stack enterprise web development.',
+    labs: ['Advanced Software Engineering Lab', 'Cloud & Mobile Application Lab'],
+    keyHighlights: ['Hands-on capstone industry internships', 'High campus placement rate in tier-1 IT firms', 'Dedicated student coding club']
   },
   {
     id: 'mtech',
     name: 'Postgraduate M.Tech Programmes',
     category: 'pg',
     establishedYear: 1998,
-    hodName: 'Dr. R. N. Herkal (PG Dean)',
-    description: 'Advanced master programs in Environmental Engineering, Geo-Technical Engineering, Structural Engineering, and Machine Design.',
+    intake: 54,
+    hodName: 'Dr. P. N. Kulkarni',
+    hodDesignation: 'Dean Academic & PG Studies Coordinator',
+    hodEmail: 'deanac@becbgk.edu',
+    stream: 'KEA PGCET / GATE Code T810',
+    description: 'Advanced autonomous master programs offering specializations in Environmental Engineering, Geo-Technical Engineering, Structural Engineering, and Machine Design.',
     labs: ['Environmental Quality Analysis Lab', 'Structural Dynamics & Shake Table Lab', 'Advanced CAD/CAE Finite Element Workstation'],
-    keyHighlights: ['GATE stipends eligible', 'Direct involvement in TEQIP research programs', 'Corporate sponsored thesis projects']
-  },
-  {
-    id: 'management',
-    name: 'Department of MBA & MCA',
-    category: 'pg',
-    establishedYear: 2006,
-    hodName: 'Dr. B. C. Patil',
-    description: 'Premier management and computer applications department nurturing future corporate leaders, entrepreneurs, and IT managers.',
-    labs: ['Business Analytics & FinTech Lab', 'Enterprise Software & Database Lab', 'Management Case Study Discussion Room'],
-    keyHighlights: ['Regular CEO & alumni talk series', 'Dual specialization in Finance, HR & Marketing', '100% placement assistance']
+    keyHighlights: ['GATE/AICTE stipend eligible', 'Direct involvement in TEQIP research programs', 'Corporate sponsored thesis projects']
   }
 ];
 
