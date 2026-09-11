@@ -86,7 +86,7 @@ export default function App() {
           <AdmissionSection />
         )}
 
-        {currentTab === 'exam' && (
+        {(currentTab === 'exam-section' || (currentTab as string) === 'exam') && (
           <ExamSection />
         )}
 
