@@ -126,15 +126,7 @@ export const INSTITUTIONAL_LEADERSHIP: LeadershipMember[] = [
     phone: '08354-234060',
     description: 'Leading funded research grants (TEQIP, AICTE, DST), VTU recognized R&D centres, campus ICT infrastructure, and intellectual property.'
   },
-  {
-    role: 'Programme Officer, NSS',
-    name: 'Dr. S. K. Patil',
-    designation: 'Associate Professor & HOD Chemistry',
-    department: 'Department of Chemistry & NSS Unit',
-    email: 'chemistry_hod@becbgk.edu',
-    phone: '08354-234060',
-    description: 'Directing community outreach, national integration camps, blood donation drives, and environmental service initiatives.'
-  },
+  
   {
     role: 'Development Officer',
     name: 'Prof. B. S. Haravi',
